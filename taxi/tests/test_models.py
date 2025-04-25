@@ -24,7 +24,7 @@ class DriverModelTest(TestCase):
             password="testpass123",
             first_name="John",
             last_name="Doe",
-            license_number="ABC123456"
+            license_number="ABC12345"
         )
 
     def test_str_returns_username_and_full_name(self):
@@ -42,12 +42,12 @@ class CarModelTest(TestCase):
         self.driver1 = get_user_model().objects.create_user(
             username="driver1",
             password="testpass123",
-            license_number="XYZ000111"
+            license_number="XYZ00011"
         )
         self.driver2 = get_user_model().objects.create_user(
             username="driver2",
             password="testpass456",
-            license_number="XYZ000222"
+            license_number="XYZ00022"
         )
         self.car = Car.objects.create(model="CX-5", manufacturer=self.manufacturer)
         self.car.drivers.add(self.driver1, self.driver2)
